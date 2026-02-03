@@ -1,0 +1,8 @@
+{
+  "name": "Arpit Yadav Portfolio",
+  "description": "A high-performance personal portfolio for a Software Development Engineer, featuring sections for leadership, skills, and selected works with a modern dark theme.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
