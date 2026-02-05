@@ -6,9 +6,19 @@ const isTouchDevice = () => {
     (navigator.msMaxTouchPoints > 0));
 };
 
-if (!isTouchDevice()) {
+// Wait for DOM to be fully loaded
+const initCursor = () => {
+  if (isTouchDevice()) return;
+
   const cursorArrow = document.getElementById("cursor-arrow");
   const canvas = document.getElementById("cursor-trail");
+  
+  // Safety check - ensure elements exist
+  if (!cursorArrow || !canvas) {
+    console.warn('Cursor elements not found');
+    return;
+  }
+  
   const ctx = canvas.getContext("2d");
 
   canvas.width = window.innerWidth;
@@ -140,4 +150,12 @@ if (!isTouchDevice()) {
   arrowY = window.innerHeight / 2;
 
   animate();
+};
+
+// Run when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initCursor);
+} else {
+  // DOM is already loaded
+  initCursor();
 }
