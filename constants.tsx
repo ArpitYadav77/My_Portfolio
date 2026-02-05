@@ -74,6 +74,7 @@ export const PROJECTS: Project[] = [
       'Single-page SDE portfolio built with React and TypeScript featuring smooth navigation, scroll spy, and Supabase contact form.',
     tags: ['REACT', 'TYPESCRIPT', 'TAILWIND'],
     image: 'https://picsum.photos/seed/chitra/600/400',
+    link: 'https://chitra-khoj.vercel.app//'
   },
   {
     id: 'p5',
@@ -82,6 +83,7 @@ export const PROJECTS: Project[] = [
       'Full-stack hotel booking system with calendar-based slot booking, payments, and admin dashboard.',
     tags: ['REACT', 'SPRING BOOT', 'POSTGRESQL'],
     image: 'https://picsum.photos/seed/boredom/600/400',
+    link: 'https://vercel.com/arpityadav77s-projects/virtual-boredom-crusher',
   },
   {
     id: 'p6',
