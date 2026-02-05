@@ -73,7 +73,7 @@ export const PROJECTS: Project[] = [
     description:
       'Single-page SDE portfolio built with React and TypeScript featuring smooth navigation, scroll spy, and Supabase contact form.',
     tags: ['REACT', 'TYPESCRIPT', 'TAILWIND'],
-    image: 'https://picsum.photos/seed/chitra/600/400',
+    image: '/chitrakhoj.png',
     link: 'https://chitra-khoj.vercel.app/'
   },
   {
@@ -82,7 +82,7 @@ export const PROJECTS: Project[] = [
     description:
       'Full-stack hotel booking system with calendar-based slot booking, payments, and admin dashboard.',
     tags: ['REACT', 'SPRING BOOT', 'POSTGRESQL'],
-    image: 'https://picsum.photos/seed/boredom/600/400',
+    image: '/boredom-crusher.png',
     link: 'https://virtual-boredom-crusher.vercel.app/',
   },
   {
@@ -91,7 +91,7 @@ export const PROJECTS: Project[] = [
     description:
       'Explore the history, culture, and beauty of every nation. Sort, search, and filter countries to find the details you need.',
     tags: ['REACT', 'REST API'],
-    image: 'https://picsum.photos/seed/atlas/600/400',
+    image: '/WorldAtlas.png',
     link: 'https://world-atlas-virid.vercel.app/',
   },
 ];
