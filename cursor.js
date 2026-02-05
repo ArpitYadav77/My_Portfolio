@@ -24,13 +24,13 @@ const initCursor = () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 
-  // Mouse position
-  let mouseX = 0;
-  let mouseY = 0;
+  // Mouse position - initialize to center to avoid jumping to (0,0)
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
 
   // Arrow position (lerped for smooth following)
-  let arrowX = 0;
-  let arrowY = 0;
+  let arrowX = window.innerWidth / 2;
+  let arrowY = window.innerHeight / 2;
 
   // Trail configuration
   const maxTrailPoints = 25;
@@ -48,10 +48,24 @@ const initCursor = () => {
   });
 
   // Track mouse position
-  window.addEventListener("mousemove", (e) => {
+  document.addEventListener("mousemove", (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
   });
+
+  // Initialize cursor position immediately on first mouse move
+  let isInitialized = false;
+  const initPosition = (e) => {
+    if (!isInitialized) {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      arrowX = e.clientX;
+      arrowY = e.clientY;
+      cursorArrow.classList.add('active');
+      isInitialized = true;
+    }
+  };
+  document.addEventListener("mousemove", initPosition, { once: true });
 
   // Hover effect on interactive elements
   const interactiveElements = 'a, button, [role="button"], .cursor-hover';
@@ -145,10 +159,7 @@ const initCursor = () => {
     requestAnimationFrame(animate);
   }
 
-  // Initialize positions
-  arrowX = window.innerWidth / 2;
-  arrowY = window.innerHeight / 2;
-
+  // Start animation loop
   animate();
 };
 
