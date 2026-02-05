@@ -51,21 +51,16 @@ const initCursor = () => {
   document.addEventListener("mousemove", (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
-  });
-
-  // Initialize cursor position immediately on first mouse move
-  let isInitialized = false;
-  const initPosition = (e) => {
+    
+    // On first mouse move, snap cursor to position
     if (!isInitialized) {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
       arrowX = e.clientX;
       arrowY = e.clientY;
-      cursorArrow.classList.add('active');
       isInitialized = true;
     }
-  };
-  document.addEventListener("mousemove", initPosition, { once: true });
+  });
+
+  let isInitialized = false;
 
   // Hover effect on interactive elements
   const interactiveElements = 'a, button, [role="button"], .cursor-hover';

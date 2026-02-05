@@ -53,13 +53,9 @@
       pointer-events: none;
       transform: translate(-2px, -2px);
       z-index: 10001;
-      opacity: 0;
-      transition: opacity 0.3s ease, transform 0.15s ease;
-      filter: drop-shadow(0 0 2px rgba(255, 189, 18, 0.3));
-    }
-    
-    #cursor-arrow.active {
       opacity: 0.95;
+      transition: transform 0.15s ease;
+      filter: drop-shadow(0 0 2px rgba(255, 189, 18, 0.3));
     }
     
     #cursor-arrow.hover {
