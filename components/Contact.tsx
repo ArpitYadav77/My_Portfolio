@@ -10,17 +10,15 @@ export const Contact: React.FC = () => {
     setStatus('sending');
 
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
+      const response = await fetch('https://formspree.io/f/mojnadjr', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          access_key: 'YOUR_ACCESS_KEY_HERE', // You'll need to get this from web3forms.com
           name: formData.name,
           email: formData.email,
           message: formData.message,
-          to: 'arpiteducation2004@gmail.com',
         }),
       });
 
