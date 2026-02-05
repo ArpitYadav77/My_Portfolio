@@ -38,10 +38,52 @@
     .animate-fade-in {
       animation: fadeIn 0.6s ease-out forwards;
     }
+
+    /* Custom Cursor Styles */
+    @media (hover: hover) and (pointer: fine) {
+      * {
+        cursor: none !important;
+      }
+    }
+    
+    #cursor-arrow {
+      position: fixed;
+      width: 24px;
+      height: 24px;
+      pointer-events: none;
+      transform: translate(-2px, -2px);
+      z-index: 10001;
+      opacity: 0.95;
+      transition: opacity 0.2s ease, transform 0.15s ease;
+      filter: drop-shadow(0 0 2px rgba(255, 189, 18, 0.3));
+    }
+    
+    #cursor-arrow.hover {
+      transform: translate(-2px, -2px) scale(1.15);
+      opacity: 1;
+      filter: drop-shadow(0 0 4px rgba(255, 189, 18, 0.5));
+    }
+    
+    #cursor-trail {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 10000;
+    }
+    
+    input, textarea, select {
+      cursor: auto !important;
+    }
   </style>
 </head>
 <body class="overflow-x-hidden">
+  <svg id="cursor-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M3 3L10.07 19.97L12.58 12.58L19.97 10.07L3 3Z" fill="#ffbd12" stroke="#0f1115" stroke-width="1.5" stroke-linejoin="round"/>
+  </svg>
+  <canvas id="cursor-trail"></canvas>
   <div id="root"></div>
   <script type="module" src="/index.tsx"></script>
+  <script src="/cursor.js"></script>
 </body>
 </html>
