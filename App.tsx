@@ -5,6 +5,7 @@ import { Leadership } from './components/Leadership';
 import { Skills } from './components/Skills';
 import { Projects } from './components/Projects';
 import { Contact } from './components/Contact';
+import { CustomCursor } from './components/CustomCursor';
 import { SectionId } from './types';
 
 const App: React.FC = () => {
@@ -46,17 +47,20 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex bg-[#0f1115] min-h-screen text-gray-200 selection:bg-[#ffbd1233] selection:text-[#ffbd12]">
-      <Sidebar activeSection={activeSection} onNavigate={handleNavigate} />
-      
-      <main className="flex-1 ml-16 md:ml-20 overflow-x-hidden">
-        <Hero />
-        <Leadership />
-        <Skills />
-        <Projects />
-        <Contact />
-      </main>
-    </div>
+    <>
+      <CustomCursor />
+      <div className="flex bg-[#0f1115] min-h-screen text-gray-200 selection:bg-[#ffbd1233] selection:text-[#ffbd12]">
+        <Sidebar activeSection={activeSection} onNavigate={handleNavigate} />
+        
+        <main className="flex-1 ml-16 md:ml-20 overflow-x-hidden">
+          <Hero />
+          <Leadership />
+          <Skills />
+          <Projects />
+          <Contact />
+        </main>
+      </div>
+    </>
   );
 };
 

@@ -46,25 +46,29 @@
       }
     }
     
-    #cursor-arrow {
+    .custom-cursor {
       position: fixed;
       width: 24px;
       height: 24px;
       pointer-events: none;
       transform: translate(-2px, -2px);
       z-index: 10001;
-      opacity: 0.95;
-      transition: transform 0.15s ease;
+      opacity: 0;
+      transition: opacity 0.3s ease, transform 0.15s ease;
       filter: drop-shadow(0 0 2px rgba(255, 189, 18, 0.3));
     }
     
-    #cursor-arrow.hover {
+    .custom-cursor.visible {
+      opacity: 0.95;
+    }
+    
+    .custom-cursor.hover {
       transform: translate(-2px, -2px) scale(1.15);
       opacity: 1;
       filter: drop-shadow(0 0 4px rgba(255, 189, 18, 0.5));
     }
     
-    #cursor-trail {
+    .custom-cursor-trail {
       position: fixed;
       top: 0;
       left: 0;
@@ -78,12 +82,7 @@
   </style>
 </head>
 <body class="overflow-x-hidden">
-  <svg id="cursor-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M3 3L10.07 19.97L12.58 12.58L19.97 10.07L3 3Z" fill="#ffbd12" stroke="#0f1115" stroke-width="1.5" stroke-linejoin="round"/>
-  </svg>
-  <canvas id="cursor-trail"></canvas>
   <div id="root"></div>
   <script type="module" src="/index.tsx"></script>
-  <script defer src="/cursor.js"></script>
 </body>
 </html>
