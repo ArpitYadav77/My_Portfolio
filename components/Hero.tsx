@@ -32,9 +32,13 @@ export const Hero: React.FC = () => {
         </div>
 
         <div className="flex items-center gap-8">
-          <button className="bg-[#ffbd12] text-[#0f1115] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#e5a910] transition-colors shadow-lg shadow-[#ffbd1222]">
+          <a 
+            href="/arpit-resume.pdf" 
+            download="Arpit_Yadav_Resume.pdf"
+            className="bg-[#ffbd12] text-[#0f1115] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#e5a910] transition-colors shadow-lg shadow-[#ffbd1222] inline-block"
+          >
             Download Resume
-          </button>
+          </a>
           <div className="flex gap-6">
             {SOCIAL_LINKS.map((link, idx) => (
               <a 
