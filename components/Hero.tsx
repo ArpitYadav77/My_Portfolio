@@ -6,7 +6,26 @@ import { HeroImage3D } from './HeroImage3D';
 
 export const Hero: React.FC = () => {
   const skills = ['Java', 'DSA', 'React', 'SQL', 'TypeScript', 'Spring Boot'];
-  
+  const handleDownload = async (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    try {
+      const response = await fetch("/FAANGPath_Simple_Template (6).pdf");
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "Arpit_Yadav_Resume.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error("Resume download failed:", error);
+      // Fallback to opening in a new tab if fetch fails
+      window.open("/FAANGPath_Simple_Template (6).pdf", "_blank");
+    }
+  };
+
   return (
     <section id="home" className="min-h-screen flex items-center px-8 md:px-24 py-20 animate-fade-in">
       <div className="hero-grid">
@@ -37,9 +56,8 @@ export const Hero: React.FC = () => {
           <div className="flex items-center gap-8">
             <a 
               href="/FAANGPath_Simple_Template (6).pdf" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#ffbd12] text-[#0f1115] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#e5a910] transition-colors shadow-lg shadow-[#ffbd1222] inline-block"
+              onClick={handleDownload}
+              className="bg-[#ffbd12] text-[#0f1115] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#e5a910] transition-colors shadow-lg shadow-[#ffbd1222] inline-block cursor-pointer"
             >
               Download Resume
             </a>
