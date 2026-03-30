@@ -37,7 +37,8 @@ export const Hero: React.FC = () => {
           <div className="flex items-center gap-8">
             <a 
               href="/FAANGPath_Simple_Template (6).pdf" 
-              download="Arpit_Yadav_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-[#ffbd12] text-[#0f1115] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#e5a910] transition-colors shadow-lg shadow-[#ffbd1222] inline-block"
             >
               Download Resume
