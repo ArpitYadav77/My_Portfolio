@@ -6,7 +6,7 @@ import { HeroImage3D } from './HeroImage3D';
 
 export const Hero: React.FC = () => {
   const skills = ['Java', 'DSA', 'React', 'SQL', 'TypeScript', 'Spring Boot'];
-  const handleDownload = async (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleDownload = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     try {
       const response = await fetch("/FAANGPath_Simple_Template (6).pdf");
@@ -18,7 +18,7 @@ export const Hero: React.FC = () => {
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-      window.URL.revokeObjectURL(url);
+      setTimeout(() => window.URL.revokeObjectURL(url), 10000);
     } catch (error) {
       console.error("Resume download failed:", error);
       // Fallback to opening in a new tab if fetch fails
@@ -54,13 +54,12 @@ export const Hero: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-8">
-            <a 
-              href="/FAANGPath_Simple_Template (6).pdf" 
+            <button 
               onClick={handleDownload}
               className="bg-[#ffbd12] text-[#0f1115] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#e5a910] transition-colors shadow-lg shadow-[#ffbd1222] inline-block cursor-pointer"
             >
               Download Resume
-            </a>
+            </button>
             <div className="flex gap-6">
               {SOCIAL_LINKS.map((link, idx) => (
                 <a 
