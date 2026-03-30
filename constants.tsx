@@ -106,6 +106,6 @@ export const SKILL_CARDS: SkillCard[] = [
 ];
 
 export const SOCIAL_LINKS = [
-  { icon: <Github size={24} />, href: 'https://github.com', label: 'GitHub' },
-  { icon: <Linkedin size={24} />, href: 'https://linkedin.com', label: 'LinkedIn' }
+  { icon: <Github size={24} />, href: 'https://github.com/ArpitYadav77', label: 'GitHub' },
+  { icon: <Linkedin size={24} />, href: 'https://www.linkedin.com/in/arpit-yadav1/', label: 'LinkedIn' }
 ];
