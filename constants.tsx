@@ -2,6 +2,9 @@
 import React from 'react';
 import { Home, Users, Code, FolderOpen, Mail, Github, Linkedin } from 'lucide-react';
 import { LeadershipActivity, Project, SkillCard, SectionId } from './types';
+import chitraKhojImg from './src/assets/projects/chitrakhoj.png';
+import boredomCrusherImg from './src/assets/projects/boredom-crusher.png';
+import worldAtlasImg from './src/assets/projects/WorldAtlas.png';
 
 export const NAV_ITEMS = [
   { id: SectionId.Home, icon: <Home size={20} />, label: 'Home' },
@@ -73,7 +76,7 @@ export const PROJECTS: Project[] = [
     description:
       'Single-page SDE portfolio built with React and TypeScript featuring smooth navigation, scroll spy, and Supabase contact form.',
     tags: ['REACT', 'TYPESCRIPT', 'TAILWIND'],
-    image: '/chitrakhoj.png',
+    image: chitraKhojImg,
     link: 'https://chitra-khoj.vercel.app/'
   },
   {
@@ -82,7 +85,7 @@ export const PROJECTS: Project[] = [
     description:
       'Full-stack hotel booking system with calendar-based slot booking, payments, and admin dashboard.',
     tags: ['REACT', 'SPRING BOOT', 'POSTGRESQL'],
-    image: '/boredom-crusher.png',
+    image: boredomCrusherImg,
     link: 'https://virtual-boredom-crusher.vercel.app/',
   },
   {
@@ -91,7 +94,7 @@ export const PROJECTS: Project[] = [
     description:
       'Explore the history, culture, and beauty of every nation. Sort, search, and filter countries to find the details you need.',
     tags: ['REACT', 'REST API'],
-    image: '/WorldAtlas.png',
+    image: worldAtlasImg,
     link: 'https://world-atlas-virid.vercel.app/',
   },
 ];
